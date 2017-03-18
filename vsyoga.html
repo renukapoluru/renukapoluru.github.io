@@ -1,0 +1,275 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+				
+<link href="http://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body{
+width:100%;
+max-width:100%;
+font-family:'Open Sans',sans-serif;
+margin:0 auto;
+float:none;
+}
+
+.wrapper{
+width:100%;
+max-width:1210px;
+margin:0 auto;
+float:none;
+padding:0 20px;
+}
+
+/* Header */
+
+.header {
+    background: transparent;
+    text-align: center;
+    padding: 20px 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+	z-index:23;
+}
+
+.header h1{
+    font-size: 21px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.header .logo{
+margin:10px 0;
+}
+
+.header .logo img{
+width:150px;
+height:auto;
+}
+
+.header .menu, .header .menu a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 13px;
+	text-decoration:none;
+transition:all ease-in-out .4s;
+
+}
+
+.header .menu li{
+display:inline-block;
+padding:0 4%;
+transition:all ease-in-out .4s;
+-webkit-transition:all ease-in-out .4s;
+-ms-transition:all ease-in-out .4s;
+position:relative;
+}
+
+.header .menu li:hover:before{
+position: absolute;
+    content: '';
+    background: #fff;
+    height: 2px;
+    width: 67%;
+    right: 0;
+    left: 0;
+    bottom: -10px;
+    margin: auto;
+}
+
+
+/* Hero Section */
+
+.hero{
+background: #231f20;
+    background-position: center;
+    height: 100vh;
+text-align:center;
+	display:flex;
+display:-webkit-flex;
+display:-ms-flex;
+display:-moz-flex;
+justify-content:center;
+align-items:center;
+padding:70px 0 50px;
+position:relative;
+}
+
+.hero p{
+font-family:'Satisfy',cursive;
+font-size:25px;
+color:#fff;
+margin: 20px 0 35px;
+}
+
+.hero a.join-us-cta{
+	display:inline-block;
+width:100%;
+max-width:225px;
+font-size:14px;
+color:#fff;
+border:1px solid;
+padding:15px 10px;
+font-weight:bold;
+}
+
+.hero a.join-us-cta:hover{
+text-decoration:none;
+cursor:pointer;
+}
+
+.hero .hero-scroll-down img{
+cursor:pointer;
+}
+
+.hero .hero-scroll-down{
+position:absolute;
+bottom:15px;
+left:0;
+right:0;
+margin:auto;
+}
+
+
+/* About Us */
+
+#about-us{
+    background: #d9ecf5;
+}
+
+.section-container{
+padding:75px 0 55px;
+text-align:center;
+}
+
+.section-container h2{
+text-transform:uppercase;
+position:relative;
+margin-bottom:30px;
+}
+
+.section-container p{
+margin-bottom:25px;
+}
+
+.section-container .wrapper{
+max-width:900px;
+}
+
+
+/* Services */
+
+
+
+
+</style>
+</head>
+<body>
+<div class="parent-container">
+<div class="header">
+<div class="wrapper">
+    <div class="logo col-xs-5">
+    <h1>Vedasamskriti Yoga Foundation</li>
+      </div>
+	<div class="menu col-xs-7">
+	<ul>
+	<li><a href="#about-us">About Us</a></li>
+	<li>What we offer?</li>
+	<li>Enroll with us</li>
+	</ul>
+     </div>
+</div>
+</div>
+<div class="hero">
+<div class="wrapper">
+	<img src="./vsyoga.jpg">
+	<p>Join us the Journey of Self-Improvement & Self Acceptance</p>
+	<a class="join-us-cta" href="#contact-us">JOIN US</a>
+	<div class="hero-scroll-down">
+	<a href="#about-us"><img src="./down.png"></a>
+</div>
+</div>
+</div>
+
+<div id="about-us" class="section-container">
+<div class="wrapper">
+	<h2>About Us</h2>
+	<p>VEDASAMSKRITI YOGA FOUNDATION is a Krishnagiri based company working towards excellence in the Spa, Salons & Wellness space, and believe in pursuing business through innovation and technology. Our team comes with several years of industry experience, and comprise of a highly motivated set of specialists & industry experts. Our goal is to be a leader in the industry by providing enhanced products, services, relationship and profitability.</p>
+	<p>Our vision is to provide quality products & services that exceeds the expectations of our esteemed customers. We firmly believe that our customers are the reason for our existence, and greatly respect the trust that they place in us. We grow through creativity and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning. Our mission is to build long term relationships with our customers. We strive towards delighting our customers at every opportunity through exceptional customer service. Our future looks bright as we continue developing a strong base of key customers and increasing the assets and investments of the company.</p>
+</div>
+</div>
+
+<div id="contact-us" class="section-container">
+<div class="wrapper">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSckDCQ2_n7_nqLNzg-inVHhp_OnE8oG020uUdpS8veoOQxHmQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+</div>
+
+</div>
+
+<div class="services-section section-container">
+<div class="wrapper">
+<h2>Services</h2>
+<div class="col-md-4">
+<h4>Service Title #1</h4>
+<p>Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here </p>
+</div>
+
+<div class="col-md-4">
+<h4>Service Title #1</h4>
+<p>Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here </p>
+
+</div>
+
+<div class="col-md-4">
+<h4>Service Title #1</h4>
+<p>Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here Service description comes here </p>
+
+
+</div>
+</div>
+</div>
+
+
+</div>
+<script>
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+
+$('.parent-container').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+
+});
+
+</script>
+</body>
+</html>
