@@ -31,6 +31,7 @@ max-width:1210px;
 margin:0 auto;
 float:none;
 padding:0 20px;
+	position:relative;
 }
 	
 h3{
@@ -214,10 +215,27 @@ max-width:900px;
 /* Services */
 	
 .services-section{
-	background: rgba(255, 173, 51, 0.72);
 	color:#fff;
+	position:relative;
+	    background: rgb(18, 65, 93) url(http://www.yogasouthington.com/wp-content/uploads/2015/05/background.jpg)no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 	
 	}
+.services-section.section-container:before {
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, 0.78);
+    width: 100$;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+	
+	
 
 .services-section h3 {
     margin-bottom: 20px;
