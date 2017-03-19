@@ -82,7 +82,7 @@ width:150px;
 height:auto;
 }
 
-.header .menu, .header .menu a {
+.header .menu li, .header .menu a {
     color: #fff;
     font-size: 13px;
     font-weight: bold;
@@ -487,6 +487,7 @@ i.fa.fa-youtube:hover {
 </style>
 </head>
 <body>
+<div class="header-container-wrapper">
 <div class="header">
 <div class="wrapper">
     <div class="logo col-xs-5">
@@ -495,12 +496,13 @@ i.fa.fa-youtube:hover {
 	<div class="menu col-xs-7">
 	<ul>
 	<li><a href="#about-us">About Us</a></li>
-	<li>What we offer?</li>
-	<li>Enroll with us</li>
+		<li><a href="#products-services">Products &amp; Services</a></li>
+		<li><a href="#contact-us">Contact Us</a></li>
 	</ul>
      </div>
 </div>
 </div>
+	</div>
 <div class="hero">
 <div class="wrapper">
 	<img src="renukapoluru.github.io/vsyoga.jpg">
@@ -560,7 +562,7 @@ i.fa.fa-youtube:hover {
 </ul>
 </div>
 </div>
-<div class="services-section section-container">
+<div id="products-services" class="services-section section-container">
 <div class="wrapper">
 	<h2>Products &amp; Services</h2>
 
@@ -710,5 +712,21 @@ $('.testimonial-slider').slick({
 
 </script>
 	<script src="https://use.fontawesome.com/f7a386584d.js"></script>
+
+<script>
+$(window).scroll(function(){
+var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+shrinkOn = 300,
+body = document.querySelector(".header-container");
+if ($(this).scrollTop() > 0){
+$('.header-container-wrapper').addClass("scroll-header");
+}
+else{
+$('.header-container-wrapper').removeClass("scroll-header");
+}
+});
+
+
+</script>
 </body>
 </html>
