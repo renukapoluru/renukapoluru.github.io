@@ -1,5 +1,5 @@
 <html>
-
+<head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
@@ -152,7 +152,7 @@ margin:auto;
 /* About Us */
 
 #about-us{
-    background: #d9ecf5;
+    background: #Ffffff;
 }
 
 .section-container{
@@ -160,12 +160,32 @@ padding:75px 0 55px;
 text-align:center;
 }
 
-.section-container h2{
-text-transform:uppercase;
-position:relative;
-margin-bottom:30px;
-font-family: 'Molengo', sans-serif;
-	}
+.section-container h2 {
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 30px;
+    font-family: 'Molengo', sans-serif;
+    border-bottom: solid 1px #dee9e6;
+    padding-bottom: 20px;
+    max-width: 360px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.section-container h2:after {
+    position: absolute;
+    content: '';
+    background: #d3b8d9;
+    height: 5px;
+    width: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -2.5px;
+}
+
+vendor-prefixes.less:77
+	
 
 .section-container p{
 margin-bottom:25px;
