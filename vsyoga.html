@@ -502,8 +502,6 @@ border: none;
 padding: 5px;
 font: 24px/36px sans-serif;
 width: 100%;
-height: 250px;
-overflow-y: scroll;
 padding:0;
 background:#000;
 color:#fff;
@@ -512,6 +510,8 @@ color:#fff;
 .myBox ul{
 	padding:0;
 	list-style:none;
+	height:200px;
+	overflow-y:scroll;
 }
 .myBox .wrapper{
 	max-width:100%;
@@ -548,6 +548,10 @@ border-radius: 10px;
 div ::-webkit-scrollbar-thumb:hover {
 background: #88ba1c;  
 }
+	
+.myBox h2{
+	color:#fff;
+	}
 
 /* More About Us */
 	
@@ -660,8 +664,9 @@ p.read-more-here {
 	
 
 <!-- HTML -->
-<div class="myBox" id="latest-updates">
+<div class="myBox section-container" id="latest-updates">
 	<div class="wrapper">
+		<h2>Latest Updates</h2>
 		<ul>
 			<li>Yoga classes to roll out soon!</li>
 			<li>Summer camp to begin in April</li>
