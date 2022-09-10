@@ -378,7 +378,7 @@ b, strong {
   top: 50%;
   transform: translate(0, -50%);
   font-family: 'unicons';
-  font-size: 100px;
+  font-size: 40px;
   line-height: normal;
 }
 .owl-carousel .owl-nav .owl-prev:before {
@@ -463,6 +463,15 @@ b, strong {
 }
 .social-links .uil:hover {
   color: #ffc200;
+}
+
+.project-info {
+  padding-bottom: 50px;
+}
+
+.project-summary {
+  max-width: 770px;
+  margin:30px auto 0;
 }
 
 @media (min-width: 1270px) {
