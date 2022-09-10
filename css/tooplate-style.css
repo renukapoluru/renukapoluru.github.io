@@ -469,6 +469,11 @@ b, strong {
   padding-bottom: 50px;
 }
 
+.project-info img {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .project-summary {
   max-width: 770px;
   margin:30px auto 0;
