@@ -1,304 +1,549 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///Users/renukapoluru/Downloads/renuka-poluru.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Renuka Poluru</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renuka Poluru — Lead Forward Deployment Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0f1c;
+    --bg-alt: #0d1424;
+    --panel: #10192b;
+    --panel-2: #131e33;
+    --border: #1f2c44;
+    --border-soft: #182238;
+    --text: #e7ecf6;
+    --muted: #8a97b3;
+    --muted-dim: #5d6a86;
+    --mint: #4fd8a8;
+    --mint-dim: #2c7a5c;
+    --amber: #e7b24e;
+    --amber-dim: #8a6a2e;
+    --radius: 10px;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    
-<!--
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(79,216,168,0.07), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(231,178,78,0.05), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
 
-Tooplate 2115 Marvel
+  ::selection{ background:var(--mint); color:#06110d; }
 
-https://www.tooplate.com/view/2115-marvel
+  a{color:inherit; text-decoration:none;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--mint);
+    outline-offset:3px;
+    border-radius:4px;
+  }
 
--->
-  </head>
-  <body>
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> RP</a>
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,15,28,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .topbar-inner{
+    max-width:1040px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.02em;
+    color:var(--text); display:flex; align-items:center; gap:10px;
+  }
+  .dot{
+    width:7px; height:7px; border-radius:50%; background:var(--mint);
+    box-shadow:0 0 0 3px rgba(79,216,168,0.15);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 3px rgba(79,216,168,0.15); }
+    50%{ box-shadow:0 0 0 6px rgba(79,216,168,0.05); }
+  }
+  .navlinks{ display:flex; gap:26px; font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+  .navlinks a{ transition:color .15s ease; white-space:nowrap; }
+  .navlinks a:hover{ color:var(--mint); }
+  .navlinks .idx{ color:var(--muted-dim); margin-right:4px; }
+  @media (max-width:720px){ .navlinks{ display:none; } }
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  /* ---------- hero ---------- */
+  .hero{
+    padding:88px 0 64px;
+    display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:start;
+  }
+  @media (max-width:860px){ .hero{ grid-template-columns:1fr; padding:56px 0 40px; gap:36px; } }
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
-                    </li>
-                </ul>
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--mint); display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:20px; height:1px; background:var(--mint-dim); }
 
-                <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <i class="color-mode-icon"></i>
-                        Color mode
-                      </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
+  .hero h1{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05; letter-spacing:-0.01em; margin-bottom:18px;
+  }
+  .hero h1 .accent{ color:var(--mint); }
+
+  .hero-role{
+    font-family:var(--mono); font-size:15px; color:var(--muted); margin-bottom:22px;
+  }
+  .hero-role .sep{ color:var(--muted-dim); margin:0 8px; }
+
+  .hero p.lede{
+    color:var(--muted); font-size:16px; max-width:52ch; margin-bottom:30px;
+  }
+
+  .hero-meta{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
+  .meta-pill{
+    font-family:var(--mono); font-size:12.5px; color:var(--text);
+    background:var(--panel); border:1px solid var(--border); border-radius:999px;
+    padding:7px 14px; display:flex; align-items:center; gap:7px;
+  }
+  .meta-pill svg{ width:13px; height:13px; stroke:var(--mint); flex-shrink:0; }
+
+  .hero-actions{ display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono); font-size:13px; padding:11px 20px; border-radius:7px;
+    border:1px solid var(--border); transition:all .15s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary{ background:var(--mint); color:#06120d; border-color:var(--mint); font-weight:600; }
+  .btn-primary:hover{ background:#63e3b8; }
+  .btn-ghost{ color:var(--muted); }
+  .btn-ghost:hover{ color:var(--text); border-color:var(--muted-dim); }
+
+  /* ---------- yaml card ---------- */
+  .yaml-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    overflow:hidden; box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);
+  }
+  .yaml-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 16px; border-bottom:1px solid var(--border-soft); background:var(--panel-2);
+  }
+  .yaml-head-left{ display:flex; align-items:center; gap:8px; }
+  .yaml-head .win{ width:9px; height:9px; border-radius:50%; }
+  .win.r{ background:#5a4040; } .win.y{ background:#5a5240; } .win.g{ background:#3f5a4a; }
+  .yaml-filename{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .yaml-status{ font-family:var(--mono); font-size:11px; color:var(--mint); }
+
+  .yaml-body{ padding:22px 22px 24px; font-family:var(--mono); font-size:13px; }
+  .yaml-line{ display:flex; gap:6px; margin-bottom:9px; }
+  .yaml-key{ color:#7fa3d1; }
+  .yaml-colon{ color:var(--muted-dim); }
+  .yaml-val{ color:var(--text); }
+  .yaml-comment{ color:var(--muted-dim); margin-bottom:14px; }
+  .yaml-indent{ padding-left:18px; }
+
+  .status-track{
+    margin-top:18px; padding-top:18px; border-top:1px dashed var(--border);
+    display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px;
+  }
+  .status-step{ color:var(--muted-dim); padding:4px 9px; border-radius:5px; border:1px solid var(--border-soft); }
+  .status-step.active{ color:#06120d; background:var(--mint); border-color:var(--mint); font-weight:600; }
+  .status-arrow{ color:var(--muted-dim); }
+  .cursor{ display:inline-block; width:7px; height:14px; background:var(--mint); margin-left:2px; animation:blink 1s step-end infinite; vertical-align:middle; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  /* ---------- section shell (file panel) ---------- */
+  section.file{ padding:52px 0; border-top:1px solid var(--border-soft); }
+  .file-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:30px; flex-wrap:wrap; }
+  .file-name{
+    font-family:var(--mono); font-size:13px; color:var(--mint);
+    background:rgba(79,216,168,0.08); border:1px solid rgba(79,216,168,0.2);
+    padding:5px 12px; border-radius:6px;
+  }
+  .file-title{ font-family:var(--display); font-weight:600; font-size:1.5rem; }
+  .file-note{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); margin-left:auto; }
+  @media (max-width:600px){ .file-note{ margin-left:0; } }
+
+  /* ---------- summary ---------- */
+  .summary-block{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:26px 28px; position:relative;
+  }
+  .summary-block::before{
+    content:'//'; font-family:var(--mono); color:var(--muted-dim); position:absolute; top:22px; left:28px;
+  }
+  .summary-block p{ padding-left:26px; color:var(--muted); font-size:15.5px; max-width:74ch; }
+  .summary-block p strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- fit cards ---------- */
+  .fit-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:26px; }
+  @media (max-width:800px){ .fit-grid{ grid-template-columns:1fr; } }
+  .fit-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:22px 20px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .fit-card:hover{ border-color:var(--mint-dim); transform:translateY(-2px); }
+  .fit-stage{ font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:0.06em; margin-bottom:12px; }
+  .fit-card h3{ font-family:var(--display); font-size:1.05rem; margin-bottom:10px; }
+  .fit-card p{ font-size:13.5px; color:var(--muted); }
+
+  /* ---------- skills ---------- */
+  .skills-panel{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; }
+  .skill-group{ margin-bottom:20px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group-key{ font-family:var(--mono); font-size:13px; color:#7fa3d1; margin-bottom:10px; }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family:var(--mono); font-size:12px; color:var(--text);
+    background:var(--bg-alt); border:1px solid var(--border-soft); border-radius:5px; padding:5px 10px;
+  }
+
+  /* ---------- experience / changelog ---------- */
+  .job{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:26px 28px; margin-bottom:22px;
+  }
+  .job:last-child{ margin-bottom:0; }
+  .job-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
+  .job-role{ font-family:var(--display); font-weight:600; font-size:1.15rem; }
+  .job-dates{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); }
+  .job-company{ font-family:var(--mono); font-size:13px; color:var(--mint); margin-bottom:18px; }
+
+  .subblock{ margin-top:20px; padding-top:18px; border-top:1px dashed var(--border); }
+  .subblock-title{
+    font-family:var(--mono); font-size:12px; color:var(--amber); margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .subblock-title .tag-mini{
+    font-size:10px; background:rgba(231,178,78,0.1); border:1px solid rgba(231,178,78,0.25);
+    padding:2px 7px; border-radius:4px; color:var(--amber);
+  }
+
+  ul.diff{ list-style:none; }
+  ul.diff li{
+    position:relative; padding:6px 0 6px 22px; font-size:14px; color:var(--muted); font-family:var(--body);
+  }
+  ul.diff li::before{
+    content:'+'; position:absolute; left:0; top:6px; color:var(--mint); font-family:var(--mono); font-weight:600;
+  }
+  ul.diff li strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- awards ---------- */
+  .award-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
+  @media (max-width:700px){ .award-grid{ grid-template-columns:1fr; } }
+  .award-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:18px 20px; display:flex; gap:14px; align-items:flex-start;
+  }
+  .award-year{
+    font-family:var(--mono); font-size:12px; color:var(--bg); background:var(--amber);
+    border-radius:5px; padding:4px 8px; flex-shrink:0; font-weight:600;
+  }
+  .award-text .t{ font-size:14.5px; color:var(--text); font-weight:500; margin-bottom:3px; }
+  .award-text .o{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); }
+
+  /* ---------- education ---------- */
+  .edu-row{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;
+    padding:16px 0; border-bottom:1px solid var(--border-soft);
+  }
+  .edu-row:last-child{ border-bottom:none; }
+  .edu-name{ font-size:15px; color:var(--text); font-weight:500; }
+  .edu-meta{ font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  /* ---------- contact / footer ---------- */
+  .contact-shell{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
+  }
+  .contact-head{
+    padding:12px 16px; border-bottom:1px solid var(--border-soft); background:var(--panel-2);
+    display:flex; align-items:center; gap:8px;
+  }
+  .contact-body{ padding:24px 24px 26px; font-family:var(--mono); font-size:14px; }
+  .cmd-line{ display:flex; gap:10px; padding:9px 0; align-items:center; flex-wrap:wrap; }
+  .cmd-prompt{ color:var(--mint); }
+  .cmd-flag{ color:var(--muted-dim); }
+  .cmd-arg{ color:var(--text); }
+  .cmd-line a.cmd-arg:hover{ color:var(--mint); text-decoration:underline; }
+
+  footer{ padding:40px 0 60px; text-align:center; }
+  footer p{ font-family:var(--mono); font-size:11.5px; color:var(--muted-dim); }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .dot, .cursor{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="dot"></span> renuka.poluru</div>
+    <nav class="navlinks">
+      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#summary"><span class="idx">01</span>summary</a>
+      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#skills"><span class="idx">02</span>skills</a>
+      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#experience"><span class="idx">03</span>experience</a>
+      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#awards"><span class="idx">04</span>awards</a>
+      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#contact"><span class="idx">05</span>contact</a>
     </nav>
+  </div>
+</div>
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Hey folks, I'm</span>
-                                <div class="animated-info">
-                                    <span class="animated-item">Renuka Poluru</span>
-                                    <span class="animated-item">Web Developer</span>
-                                    <span class="animated-item">Fullstack Expert</span>
-                                </div>
-                        </h1>
+<div class="wrap">
 
-                        <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
-                        
-                        <div class="custom-btn-group mt-4">
-                          <a href="RenukaPoluru.pdf" target="_blank" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
-                          <a href="mailto:renukapoluruv@gmail.com" target="_blank" class="btn custom-btn custom-btn-bg custom-btn-link">Contact Me</a>
-                        </div>
-                    </div>
-                </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Bangalore, India</div>
+      <h1>Renuka <span class="accent">Poluru</span></h1>
+      <div class="hero-role">Lead Forward Deployment Engineer <span class="sep">/</span> AI Product Engineer</div>
+      <p class="lede">10 years building customer-facing fintech platforms — most recently <strong style="color:var(--text)">ProdAigy</strong>, an AI copilot that helps bank portfolio managers configure products through guided forms, generated YAML, and human-approved deployments.</p>
 
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image svg">
-                        <img src="images/undraw/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image">
-                    </div>
-                </div>
+      <div class="hero-meta">
+        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M2 12h20"></path></svg>10 yrs experience</span>
+        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"></circle></svg>Zeta · since 2019</span>
+        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>Human-in-the-loop AI</span>
+      </div>
 
-            </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:renukapoluruv@gmail.com">mail --to renuka</a>
+        <a class="btn btn-ghost" href="tel:7348870730">call · 73488 70730</a>
+      </div>
+    </div>
+
+    <div class="yaml-card reveal in">
+      <div class="yaml-head">
+        <div class="yaml-head-left">
+          <span class="win r"></span><span class="win y"></span><span class="win g"></span>
+          <span class="yaml-filename" style="margin-left:6px;">profile.yaml</span>
         </div>
-    </section>
+        <span class="yaml-status">● approved</span>
+      </div>
+      <div class="yaml-body">
+        <div class="yaml-comment"># auto-generated candidate profile</div>
+        <div class="yaml-line"><span class="yaml-key">name</span><span class="yaml-colon">:</span><span class="yaml-val"> Renuka Poluru</span></div>
+        <div class="yaml-line"><span class="yaml-key">title</span><span class="yaml-colon">:</span><span class="yaml-val"> Lead Forward Deployment Engineer</span></div>
+        <div class="yaml-line"><span class="yaml-key">focus</span><span class="yaml-colon">:</span><span class="yaml-val"> AI Product Engineering</span></div>
+        <div class="yaml-line"><span class="yaml-key">based_in</span><span class="yaml-colon">:</span><span class="yaml-val"> Bangalore, IN</span></div>
+        <div class="yaml-line"><span class="yaml-key">experience</span><span class="yaml-colon">:</span><span class="yaml-val"> 10y</span></div>
+        <div class="yaml-line"><span class="yaml-key">stack</span><span class="yaml-colon">:</span><span class="yaml-val"> [TypeScript, Vue, NestJS, Azure&nbsp;AI]</span></div>
+        <div class="yaml-line yaml-indent"><span class="yaml-key">recent_project</span><span class="yaml-colon">:</span><span class="yaml-val"> ProdAigy</span></div>
 
-    <!-- PROJECTS -->
-    <section class="project py-5" id="project">
-        <div class="container">
-                
-                <div class="row">
-                  <div class="col-lg-11 text-center mx-auto col-12">
-
-                      <div class="col-lg-8 mx-auto">
-                        <h2>Things I have developed for my Work and Hackathons</h2>
-                      </div>
-
-                      <div class="owl-carousel owl-theme">
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/VBOCenter.jpg" class="img-fluid" alt="VBO Center">
-                            <div class="project-summary">
-                              <h3>VBO Center</h3>
-                              <p>VBO Center is the single point in Aphrodite that allows an Issuer to monitor and control a VBO’s program including accounts, account holders, payment instruments, apps, reports and service requests.</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/OperationsCenter.jpg" class="img-fluid" alt="Operations Center">
-                            <div class="project-summary">
-                              <h3>Operations Center</h3>
-                              <p>Operations Center is the platform that allows a tenant (issuer or a VBO) to start, stop, perform, track and monitor different custom tasks that may or may not involve maker checker workflows.</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/Spotlight.jpg" class="img-fluid" alt="Spotlight">
-                            <div class="project-summary">
-                              <h3>Spotlight</h3>
-                              <p>Spotlight as a product is built to promote employee motivation and to be in line with the cultural value pillars of the organization. Recognition programs are virtual currency / point-based programs. This section will be used to manage Recognition program, awards, and budget allocations</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                  </div>
-                </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4">Experiences</h2>
-
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2019</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3><span>Senior Frontend Developer</span><small>Zeta Suite</small></h3>
-                                  <p><b>Aug 2019 - Present</b> Built several digital web products like VBO Center, Operations Center, Spotlight Rewards.</p>
-                             </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2016</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3><span>Software Engineer</span><small>Iosys Private Limited</small></h3>
-                                <p><b>Aug 2016 - Jul 2019</b> Implemented Web Services for several clients keeping delivery and perfection on spot.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4 mobile-mt-2">Educations</h2>
-
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2012</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3><span>Bachelor of Technology(CSE)</span><small>NRIIT</small></h3>
-                                  <p><b>2012 - 2016</b> Completed my Bachelor of Technology of CSE degree from NRI Institute of Technology.</p>
-                             </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2012</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3><span>Intermediate</span><small>Sri Chaitanya Junior College</small></h3>
-                                <p><b>2010-2012</b> Completed my Secondary Intermediate.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2010</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3><span>10th</span><small>Sree Vidyanikethan International School</small></h3>
-                                <p><b>2008-2010</b> Completed my schooling from SVIS.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-      <div class="container">
-        <div class="row">
-          
-          <div class="col-lg-5 mr-lg-5 col-12">
-            <div class="google-map w-100">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1719348744064!2d77.65467992450888!3d12.960847489415317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae130851cec60d%3A0xb85e541fb3f446ef!2sMANI%20NEST!5e0!3m2!1sen!2sin!4v1662565564400!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-
-            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
-                <div class="contact-info-item">
-                  <h3 class="mb-3 text-white">Say hello</h3>
-                  <p class="footer-text mb-0"><a href="tel:+917348870730">+917348870730</a></p>
-                  <p><a href="mailto:renukapoluruv@gmail.com">renukapoluruv@gmail.com</a></p>
-                </div>
-
-                <ul class="social-links">
-                     <li><a href="https://www.linkedin.com/in/renuka-poluru-710262b7/" class="uil uil-linkedin" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a></li>
-                     <li><a href="https://instagram.com/renukapoluru" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
-                     <li><a href="https://www.youtube.com/channel/UC8_OCC3LrOhSbSj9fLi1ewA" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
-                </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-12">
-            <div class="contact-form">
-              <h2 class="mb-4">Interested to work together? Let's talk</h2>
-
-              <form action="" method="get">
-                <div class="row">
-                  <div class="col-lg-6 col-12">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
-                  </div>
-
-                  <div class="col-lg-6 col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
-                  </div>
-
-                  <div class="col-12">
-                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
-                  </div>
-
-                  <div class="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" class="form-control submit-btn" value="Send Button">
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
+        <div class="status-track">
+          <span class="status-step">draft</span>
+          <span class="status-arrow">→</span>
+          <span class="status-step">review</span>
+          <span class="status-arrow">→</span>
+          <span class="status-step active">approved</span>
+          <span class="cursor"></span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-     <footer class="footer py-5">
-          <div class="container">
-               <div class="row">
+  <!-- SUMMARY -->
+  <section class="file reveal in" id="summary">
+    <div class="file-head">
+      <span class="file-name">01 · summary.md</span>
+      <h2 class="file-title">Professional summary</h2>
+    </div>
+    <div class="summary-block">
+      <p>Lead Forward Deployment Engineer and AI Product Engineer with <strong>10 years</strong> of experience building customer-facing fintech platforms, workflow consoles, secure integrations, analytics, and operational tooling. Recent work centers on <strong>ProdAigy</strong> — an AI copilot for enterprise banking product configuration that helps portfolio managers select product templates, fill forms, generate safe YAML changes, and move changes through human-approved deployment workflows.</p>
+    </div>
 
-                    <div class="col-lg-12 col-12">                                
-                        <p class="copyright-text text-center">Copyright &copy; 2022 Renuka Poluru. All rights reserved</p>
-                    </div>
-                    
-               </div>
-          </div>
-     </footer>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-stage">customer implementation</div>
+        <h3>POC to production</h3>
+        <p>Delivered banking product-configuration, AI copilot, and operations-workbench capabilities from POC through UAT, production-like testing, and controlled rollout.</p>
+      </div>
+      <div class="fit-card">
+        <div class="fit-stage">ai solution engineering</div>
+        <h3>Guarded generation</h3>
+        <p>Built LLM orchestration, tool calling, schema-constrained outputs, YAML patch generation, document-assisted form filling, human approval flows, and AI observability.</p>
+      </div>
+      <div class="fit-card">
+        <div class="fit-stage">operational ownership</div>
+        <h3>Less manual, more traceable</h3>
+        <p>Reduced manual setup and investigation through dashboards, lifecycle traceability, Git-backed change requests, workflow automation, and release-readiness programs.</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+  <!-- SKILLS -->
+  <section class="file reveal in" id="skills">
+    <div class="file-head">
+      <span class="file-name">02 · skills.yaml</span>
+      <h2 class="file-title">Core skills</h2>
+    </div>
+    <div class="skills-panel">
+      <div class="skill-group">
+        <div class="skill-group-key">product_and_delivery:</div>
+        <div class="tag-row">
+          <span class="tag">forward deployment</span><span class="tag">customer discovery</span><span class="tag">solution engineering</span><span class="tag">stakeholder management</span><span class="tag">release planning</span><span class="tag">UAT coordination</span><span class="tag">production rollout</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-key">ai_engineering:</div>
+        <div class="tag-row">
+          <span class="tag">Azure AI models</span><span class="tag">AI SDK</span><span class="tag">LLM tool calling</span><span class="tag">prompt orchestration</span><span class="tag">context grounding</span><span class="tag">structured outputs</span><span class="tag">JSON Schema</span><span class="tag">Zod</span><span class="tag">YAML generation</span><span class="tag">response repair</span><span class="tag">sensitive-field redaction</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-key">engineering:</div>
+        <div class="tag-row">
+          <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Vue.js</span><span class="tag">Angular</span><span class="tag">Vite</span><span class="tag">Pinia</span><span class="tag">Vuex</span><span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">tRPC</span><span class="tag">Axios</span><span class="tag">REST APIs</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL</span><span class="tag">Redshift</span><span class="tag">Redis</span><span class="tag">Jest</span><span class="tag">Cypress</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-key">platforms:</div>
+        <div class="tag-row">
+          <span class="tag">AI-assisted config</span><span class="tag">banking ops consoles</span><span class="tag">Git-backed config</span><span class="tag">micro-frontends</span><span class="tag">design systems</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">Prometheus</span><span class="tag">OpenTelemetry</span><span class="tag">Winston</span><span class="tag">RBAC</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </body>
-</html>
+  <!-- EXPERIENCE -->
+  <section class="file reveal in" id="experience">
+    <div class="file-head">
+      <span class="file-name">03 · experience.log</span>
+      <h2 class="file-title">Professional experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Lead Software Engineer</span>
+        <span class="job-dates">Sep 2019 — Present</span>
+      </div>
+      <div class="job-company">Zeta</div>
+
+      <div class="subblock">
+        <div class="subblock-title">recent AI project <span class="tag-mini">ProdAigy</span></div>
+        <ul class="diff">
+          <li>Built and deployed <strong>ProdAigy</strong>, an AI copilot that helps bank portfolio managers create, update, and validate financial product bundles across card, payment, account, wallet, notification, and policy configurations.</li>
+          <li>Designed LLM workflows for product-template recommendation, guided configuration, document-assisted form filling, YAML generation, and change-proposal journeys.</li>
+          <li>Added AI guardrails with JSON Schema, Zod, catalog reconciliation, editable-path validation, response parsing/repair, sensitive-field redaction, and scoped transient document context.</li>
+          <li>Built human-in-the-loop change flows where AI proposes minimal YAML patches, shows confirmation cards and diffs, and applies updates only after explicit user approval.</li>
+          <li>Productionized the AI workflow with Redis-backed session memory, auth-aware service calls, Prometheus metrics, structured logging, OpenTelemetry tracing, Docker builds, and Helm/Kubernetes deployment configs.</li>
+        </ul>
+      </div>
+
+      <div class="subblock">
+        <div class="subblock-title">product configuration &amp; operations platforms</div>
+        <ul class="diff">
+          <li>Owned end-to-end delivery of product-configuration and bundle-operations tools used by operations teams to configure, monitor, issue, and troubleshoot banking product bundles.</li>
+          <li>Built the initial product-configuration platform POC and first release, including spreadsheet-based data-entry flows, bank-client UAT deployment, product bundle backfill, and team onboarding.</li>
+          <li>Designed operations-workbench consoles for product bundles, issuance requests, status details, dashboards, application tracking, and application details, reducing dependence on backend/API lookups.</li>
+          <li>Delivered card and bundle issuance flows including primary card, add-on card, reissue/replacement-style actions, PIN setup, and account activation across pre-production and production environments.</li>
+          <li>Shipped dynamic form builder, reusable API-backed search, and analytics capabilities using schema-based forms, interactive charts, Redshift APIs, session-based authorization, and TypeORM queries.</li>
+          <li>Improved governance and release reliability with RBAC, dual-approval overrides, API-call validation, asset-security fixes, workflow automation, deployment checks, Git-backed environment promotion, and bug-bash release readiness.</li>
+          <li>Onboarded frontend engineers through architecture walkthroughs, internal tooling guidance, deployment-process support, and codebase orientation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Frontend Developer</span>
+        <span class="job-dates">Aug 2016 — Aug 2019</span>
+      </div>
+      <div class="job-company">iOSys</div>
+      <ul class="diff">
+        <li>Implemented pixel-perfect, responsive websites and web interfaces using HTML, CSS, JavaScript, and Angular.</li>
+        <li>Converted UI designs into production-ready pages with strong attention to layout accuracy, cross-browser behavior, responsive structure, and maintainable front-end code.</li>
+        <li>Collaborated with design and engineering stakeholders to deliver reliable customer-facing web experiences and support iterative improvements across web projects.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="file reveal in" id="awards">
+    <div class="file-head">
+      <span class="file-name">04 · awards.json</span>
+      <h2 class="file-title">Hackathons &amp; awards</h2>
+    </div>
+    <div class="award-grid">
+      <div class="award-card"><span class="award-year">2025</span><div class="award-text"><div class="t">Second-Place Winner</div><div class="o">Pixel Hackathon, Zeta</div></div></div>
+      <div class="award-card"><span class="award-year">2024</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
+      <div class="award-card"><span class="award-year">2022</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
+      <div class="award-card"><span class="award-year">2020</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
+      <div class="award-card"><span class="award-year">2020</span><div class="award-text"><div class="t">Winner — Kreate Hackathon</div><div class="o">MoneyOnClick, org. by Kalaari Capital</div></div></div>
+      <div class="award-card"><span class="award-year">2019</span><div class="award-text"><div class="t">Best API Usage Award</div><div class="o">WMN Hackathon, HERE Technologies</div></div></div>
+      <div class="award-card"><span class="award-year">2018</span><div class="award-text"><div class="t">Second Place Winner</div><div class="o">Hedera18 Hackathon India</div></div></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="file reveal in">
+    <div class="file-head">
+      <span class="file-name">05 · education.md</span>
+      <h2 class="file-title">Education</h2>
+    </div>
+    <div class="summary-block" style="padding:8px 28px;">
+      <div class="edu-row">
+        <span class="edu-name">Bachelor of Technology — NRI Institute of Technology</span>
+        <span class="edu-meta">2012 – 2016 · 70%</span>
+      </div>
+      <div class="edu-row">
+        <span class="edu-name">Intermediate — Sri Chaitanya Junior College</span>
+        <span class="edu-meta">2010 – 2012 · 90%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="file reveal in" id="contact">
+    <div class="file-head">
+      <span class="file-name">06 · contact.sh</span>
+      <h2 class="file-title">Get in touch</h2>
+    </div>
+    <div class="contact-shell">
+      <div class="contact-head">
+        <span class="win r"></span><span class="win y"></span><span class="win g"></span>
+        <span class="yaml-filename" style="margin-left:6px;">bash — contact.sh</span>
+      </div>
+      <div class="contact-body">
+        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">call</span><a class="cmd-arg" href="tel:7348870730">73488 70730</a></div>
+        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">mail --to</span><a class="cmd-arg" href="mailto:renukapoluruv@gmail.com">renukapoluruv@gmail.com</a></div>
+        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">open</span><span class="cmd-arg">linkedin.com/in/renukapoluru</span></div>
+        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">open</span><span class="cmd-arg">github.com/renukapoluru</span></div>
+        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">location</span><span class="cmd-arg">Bangalore, India</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>renuka poluru · built from profile.yaml · status: approved</p>
+  </footer>
+
+</div>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+
+
+</body></html>
