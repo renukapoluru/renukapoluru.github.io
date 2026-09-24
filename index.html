@@ -1,549 +1,69 @@
-<!DOCTYPE html>
-<!-- saved from url=(0055)file:///Users/renukapoluru/Downloads/renuka-poluru.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renuka Poluru — Lead Forward Deployment Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./index_files/css2" rel="stylesheet">
-<style>
-  :root{
-    --bg: #0a0f1c;
-    --bg-alt: #0d1424;
-    --panel: #10192b;
-    --panel-2: #131e33;
-    --border: #1f2c44;
-    --border-soft: #182238;
-    --text: #e7ecf6;
-    --muted: #8a97b3;
-    --muted-dim: #5d6a86;
-    --mint: #4fd8a8;
-    --mint-dim: #2c7a5c;
-    --amber: #e7b24e;
-    --amber-dim: #8a6a2e;
-    --radius: 10px;
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'Inter', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
-  }
-
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-
-  body{
-    background:
-      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(79,216,168,0.07), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(231,178,78,0.05), transparent 60%),
-      var(--bg);
-    color:var(--text);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  ::selection{ background:var(--mint); color:#06110d; }
-
-  a{color:inherit; text-decoration:none;}
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--mint);
-    outline-offset:3px;
-    border-radius:4px;
-  }
-
-  .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,15,28,0.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border-soft);
-  }
-  .topbar-inner{
-    max-width:1040px; margin:0 auto; padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .brand{
-    font-family:var(--mono); font-size:13px; letter-spacing:0.02em;
-    color:var(--text); display:flex; align-items:center; gap:10px;
-  }
-  .dot{
-    width:7px; height:7px; border-radius:50%; background:var(--mint);
-    box-shadow:0 0 0 3px rgba(79,216,168,0.15);
-    animation:pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{ box-shadow:0 0 0 3px rgba(79,216,168,0.15); }
-    50%{ box-shadow:0 0 0 6px rgba(79,216,168,0.05); }
-  }
-  .navlinks{ display:flex; gap:26px; font-family:var(--mono); font-size:12.5px; color:var(--muted); }
-  .navlinks a{ transition:color .15s ease; white-space:nowrap; }
-  .navlinks a:hover{ color:var(--mint); }
-  .navlinks .idx{ color:var(--muted-dim); margin-right:4px; }
-  @media (max-width:720px){ .navlinks{ display:none; } }
-
-  /* ---------- hero ---------- */
-  .hero{
-    padding:88px 0 64px;
-    display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:start;
-  }
-  @media (max-width:860px){ .hero{ grid-template-columns:1fr; padding:56px 0 40px; gap:36px; } }
-
-  .eyebrow{
-    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--mint); display:flex; align-items:center; gap:10px; margin-bottom:22px;
-  }
-  .eyebrow::before{ content:''; width:20px; height:1px; background:var(--mint-dim); }
-
-  .hero h1{
-    font-family:var(--display); font-weight:700;
-    font-size:clamp(2.4rem, 5vw, 3.6rem);
-    line-height:1.05; letter-spacing:-0.01em; margin-bottom:18px;
-  }
-  .hero h1 .accent{ color:var(--mint); }
-
-  .hero-role{
-    font-family:var(--mono); font-size:15px; color:var(--muted); margin-bottom:22px;
-  }
-  .hero-role .sep{ color:var(--muted-dim); margin:0 8px; }
-
-  .hero p.lede{
-    color:var(--muted); font-size:16px; max-width:52ch; margin-bottom:30px;
-  }
-
-  .hero-meta{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
-  .meta-pill{
-    font-family:var(--mono); font-size:12.5px; color:var(--text);
-    background:var(--panel); border:1px solid var(--border); border-radius:999px;
-    padding:7px 14px; display:flex; align-items:center; gap:7px;
-  }
-  .meta-pill svg{ width:13px; height:13px; stroke:var(--mint); flex-shrink:0; }
-
-  .hero-actions{ display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
-  .btn{
-    font-family:var(--mono); font-size:13px; padding:11px 20px; border-radius:7px;
-    border:1px solid var(--border); transition:all .15s ease; display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn-primary{ background:var(--mint); color:#06120d; border-color:var(--mint); font-weight:600; }
-  .btn-primary:hover{ background:#63e3b8; }
-  .btn-ghost{ color:var(--muted); }
-  .btn-ghost:hover{ color:var(--text); border-color:var(--muted-dim); }
-
-  /* ---------- yaml card ---------- */
-  .yaml-card{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    overflow:hidden; box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);
-  }
-  .yaml-head{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:12px 16px; border-bottom:1px solid var(--border-soft); background:var(--panel-2);
-  }
-  .yaml-head-left{ display:flex; align-items:center; gap:8px; }
-  .yaml-head .win{ width:9px; height:9px; border-radius:50%; }
-  .win.r{ background:#5a4040; } .win.y{ background:#5a5240; } .win.g{ background:#3f5a4a; }
-  .yaml-filename{ font-family:var(--mono); font-size:12px; color:var(--muted); }
-  .yaml-status{ font-family:var(--mono); font-size:11px; color:var(--mint); }
-
-  .yaml-body{ padding:22px 22px 24px; font-family:var(--mono); font-size:13px; }
-  .yaml-line{ display:flex; gap:6px; margin-bottom:9px; }
-  .yaml-key{ color:#7fa3d1; }
-  .yaml-colon{ color:var(--muted-dim); }
-  .yaml-val{ color:var(--text); }
-  .yaml-comment{ color:var(--muted-dim); margin-bottom:14px; }
-  .yaml-indent{ padding-left:18px; }
-
-  .status-track{
-    margin-top:18px; padding-top:18px; border-top:1px dashed var(--border);
-    display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px;
-  }
-  .status-step{ color:var(--muted-dim); padding:4px 9px; border-radius:5px; border:1px solid var(--border-soft); }
-  .status-step.active{ color:#06120d; background:var(--mint); border-color:var(--mint); font-weight:600; }
-  .status-arrow{ color:var(--muted-dim); }
-  .cursor{ display:inline-block; width:7px; height:14px; background:var(--mint); margin-left:2px; animation:blink 1s step-end infinite; vertical-align:middle; }
-  @keyframes blink{ 50%{ opacity:0; } }
-
-  /* ---------- section shell (file panel) ---------- */
-  section.file{ padding:52px 0; border-top:1px solid var(--border-soft); }
-  .file-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:30px; flex-wrap:wrap; }
-  .file-name{
-    font-family:var(--mono); font-size:13px; color:var(--mint);
-    background:rgba(79,216,168,0.08); border:1px solid rgba(79,216,168,0.2);
-    padding:5px 12px; border-radius:6px;
-  }
-  .file-title{ font-family:var(--display); font-weight:600; font-size:1.5rem; }
-  .file-note{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); margin-left:auto; }
-  @media (max-width:600px){ .file-note{ margin-left:0; } }
-
-  /* ---------- summary ---------- */
-  .summary-block{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:26px 28px; position:relative;
-  }
-  .summary-block::before{
-    content:'//'; font-family:var(--mono); color:var(--muted-dim); position:absolute; top:22px; left:28px;
-  }
-  .summary-block p{ padding-left:26px; color:var(--muted); font-size:15.5px; max-width:74ch; }
-  .summary-block p strong{ color:var(--text); font-weight:600; }
-
-  /* ---------- fit cards ---------- */
-  .fit-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:26px; }
-  @media (max-width:800px){ .fit-grid{ grid-template-columns:1fr; } }
-  .fit-card{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:22px 20px;
-    transition:border-color .2s ease, transform .2s ease;
-  }
-  .fit-card:hover{ border-color:var(--mint-dim); transform:translateY(-2px); }
-  .fit-stage{ font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:0.06em; margin-bottom:12px; }
-  .fit-card h3{ font-family:var(--display); font-size:1.05rem; margin-bottom:10px; }
-  .fit-card p{ font-size:13.5px; color:var(--muted); }
-
-  /* ---------- skills ---------- */
-  .skills-panel{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; }
-  .skill-group{ margin-bottom:20px; }
-  .skill-group:last-child{ margin-bottom:0; }
-  .skill-group-key{ font-family:var(--mono); font-size:13px; color:#7fa3d1; margin-bottom:10px; }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
-  .tag{
-    font-family:var(--mono); font-size:12px; color:var(--text);
-    background:var(--bg-alt); border:1px solid var(--border-soft); border-radius:5px; padding:5px 10px;
-  }
-
-  /* ---------- experience / changelog ---------- */
-  .job{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:26px 28px; margin-bottom:22px;
-  }
-  .job:last-child{ margin-bottom:0; }
-  .job-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
-  .job-role{ font-family:var(--display); font-weight:600; font-size:1.15rem; }
-  .job-dates{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); }
-  .job-company{ font-family:var(--mono); font-size:13px; color:var(--mint); margin-bottom:18px; }
-
-  .subblock{ margin-top:20px; padding-top:18px; border-top:1px dashed var(--border); }
-  .subblock-title{
-    font-family:var(--mono); font-size:12px; color:var(--amber); margin-bottom:12px;
-    display:flex; align-items:center; gap:8px;
-  }
-  .subblock-title .tag-mini{
-    font-size:10px; background:rgba(231,178,78,0.1); border:1px solid rgba(231,178,78,0.25);
-    padding:2px 7px; border-radius:4px; color:var(--amber);
-  }
-
-  ul.diff{ list-style:none; }
-  ul.diff li{
-    position:relative; padding:6px 0 6px 22px; font-size:14px; color:var(--muted); font-family:var(--body);
-  }
-  ul.diff li::before{
-    content:'+'; position:absolute; left:0; top:6px; color:var(--mint); font-family:var(--mono); font-weight:600;
-  }
-  ul.diff li strong{ color:var(--text); font-weight:600; }
-
-  /* ---------- awards ---------- */
-  .award-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
-  @media (max-width:700px){ .award-grid{ grid-template-columns:1fr; } }
-  .award-card{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:18px 20px; display:flex; gap:14px; align-items:flex-start;
-  }
-  .award-year{
-    font-family:var(--mono); font-size:12px; color:var(--bg); background:var(--amber);
-    border-radius:5px; padding:4px 8px; flex-shrink:0; font-weight:600;
-  }
-  .award-text .t{ font-size:14.5px; color:var(--text); font-weight:500; margin-bottom:3px; }
-  .award-text .o{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); }
-
-  /* ---------- education ---------- */
-  .edu-row{
-    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;
-    padding:16px 0; border-bottom:1px solid var(--border-soft);
-  }
-  .edu-row:last-child{ border-bottom:none; }
-  .edu-name{ font-size:15px; color:var(--text); font-weight:500; }
-  .edu-meta{ font-family:var(--mono); font-size:12.5px; color:var(--muted); }
-
-  /* ---------- contact / footer ---------- */
-  .contact-shell{
-    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
-  }
-  .contact-head{
-    padding:12px 16px; border-bottom:1px solid var(--border-soft); background:var(--panel-2);
-    display:flex; align-items:center; gap:8px;
-  }
-  .contact-body{ padding:24px 24px 26px; font-family:var(--mono); font-size:14px; }
-  .cmd-line{ display:flex; gap:10px; padding:9px 0; align-items:center; flex-wrap:wrap; }
-  .cmd-prompt{ color:var(--mint); }
-  .cmd-flag{ color:var(--muted-dim); }
-  .cmd-arg{ color:var(--text); }
-  .cmd-line a.cmd-arg:hover{ color:var(--mint); text-decoration:underline; }
-
-  footer{ padding:40px 0 60px; text-align:center; }
-  footer p{ font-family:var(--mono); font-size:11.5px; color:var(--muted-dim); }
-
-  /* reveal on scroll */
-  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-    .dot, .cursor{ animation:none; }
-  }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf7f0">
+<title>Renuka Poluru · A frontend fairytale</title>
+<meta name="description" content="Renuka Poluru is a Lead Software Engineer in Bangalore with 10+ years building frontend platforms, reusable design systems, and AI-assisted products.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Renuka Poluru · A frontend fairytale">
+<meta property="og:description" content="A little wonder. A lot of frontend. A decade of frontend craft, platform architecture, and AI products.">
+<meta property="og:url" content="https://renukapoluru.github.io/">
+<meta property="og:image" content="https://renukapoluru.github.io/public/og.png">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="Renuka Poluru — A little wonder. A lot of frontend. An illustrated storybook with floating browser windows.">
+<meta name="twitter:image" content="https://renukapoluru.github.io/public/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://renukapoluru.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fairytale.css">
+<script src="js/fairytale.js" defer></script>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand"><span class="dot"></span> renuka.poluru</div>
-    <nav class="navlinks">
-      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#summary"><span class="idx">01</span>summary</a>
-      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#skills"><span class="idx">02</span>skills</a>
-      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#experience"><span class="idx">03</span>experience</a>
-      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#awards"><span class="idx">04</span>awards</a>
-      <a href="file:///Users/renukapoluru/Downloads/renuka-poluru.html#contact"><span class="idx">05</span>contact</a>
-    </nav>
-  </div>
-</div>
-
-<div class="wrap">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Bangalore, India</div>
-      <h1>Renuka <span class="accent">Poluru</span></h1>
-      <div class="hero-role">Lead Forward Deployment Engineer <span class="sep">/</span> AI Product Engineer</div>
-      <p class="lede">10 years building customer-facing fintech platforms — most recently <strong style="color:var(--text)">ProdAigy</strong>, an AI copilot that helps bank portfolio managers configure products through guided forms, generated YAML, and human-approved deployments.</p>
-
-      <div class="hero-meta">
-        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M2 12h20"></path></svg>10 yrs experience</span>
-        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"></circle></svg>Zeta · since 2019</span>
-        <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>Human-in-the-loop AI</span>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:renukapoluruv@gmail.com">mail --to renuka</a>
-        <a class="btn btn-ghost" href="tel:7348870730">call · 73488 70730</a>
-      </div>
-    </div>
-
-    <div class="yaml-card reveal in">
-      <div class="yaml-head">
-        <div class="yaml-head-left">
-          <span class="win r"></span><span class="win y"></span><span class="win g"></span>
-          <span class="yaml-filename" style="margin-left:6px;">profile.yaml</span>
-        </div>
-        <span class="yaml-status">● approved</span>
-      </div>
-      <div class="yaml-body">
-        <div class="yaml-comment"># auto-generated candidate profile</div>
-        <div class="yaml-line"><span class="yaml-key">name</span><span class="yaml-colon">:</span><span class="yaml-val"> Renuka Poluru</span></div>
-        <div class="yaml-line"><span class="yaml-key">title</span><span class="yaml-colon">:</span><span class="yaml-val"> Lead Forward Deployment Engineer</span></div>
-        <div class="yaml-line"><span class="yaml-key">focus</span><span class="yaml-colon">:</span><span class="yaml-val"> AI Product Engineering</span></div>
-        <div class="yaml-line"><span class="yaml-key">based_in</span><span class="yaml-colon">:</span><span class="yaml-val"> Bangalore, IN</span></div>
-        <div class="yaml-line"><span class="yaml-key">experience</span><span class="yaml-colon">:</span><span class="yaml-val"> 10y</span></div>
-        <div class="yaml-line"><span class="yaml-key">stack</span><span class="yaml-colon">:</span><span class="yaml-val"> [TypeScript, Vue, NestJS, Azure&nbsp;AI]</span></div>
-        <div class="yaml-line yaml-indent"><span class="yaml-key">recent_project</span><span class="yaml-colon">:</span><span class="yaml-val"> ProdAigy</span></div>
-
-        <div class="status-track">
-          <span class="status-step">draft</span>
-          <span class="status-arrow">→</span>
-          <span class="status-step">review</span>
-          <span class="status-arrow">→</span>
-          <span class="status-step active">approved</span>
-          <span class="cursor"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUMMARY -->
-  <section class="file reveal in" id="summary">
-    <div class="file-head">
-      <span class="file-name">01 · summary.md</span>
-      <h2 class="file-title">Professional summary</h2>
-    </div>
-    <div class="summary-block">
-      <p>Lead Forward Deployment Engineer and AI Product Engineer with <strong>10 years</strong> of experience building customer-facing fintech platforms, workflow consoles, secure integrations, analytics, and operational tooling. Recent work centers on <strong>ProdAigy</strong> — an AI copilot for enterprise banking product configuration that helps portfolio managers select product templates, fill forms, generate safe YAML changes, and move changes through human-approved deployment workflows.</p>
-    </div>
-
-    <div class="fit-grid">
-      <div class="fit-card">
-        <div class="fit-stage">customer implementation</div>
-        <h3>POC to production</h3>
-        <p>Delivered banking product-configuration, AI copilot, and operations-workbench capabilities from POC through UAT, production-like testing, and controlled rollout.</p>
-      </div>
-      <div class="fit-card">
-        <div class="fit-stage">ai solution engineering</div>
-        <h3>Guarded generation</h3>
-        <p>Built LLM orchestration, tool calling, schema-constrained outputs, YAML patch generation, document-assisted form filling, human approval flows, and AI observability.</p>
-      </div>
-      <div class="fit-card">
-        <div class="fit-stage">operational ownership</div>
-        <h3>Less manual, more traceable</h3>
-        <p>Reduced manual setup and investigation through dashboards, lifecycle traceability, Git-backed change requests, workflow automation, and release-readiness programs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="file reveal in" id="skills">
-    <div class="file-head">
-      <span class="file-name">02 · skills.yaml</span>
-      <h2 class="file-title">Core skills</h2>
-    </div>
-    <div class="skills-panel">
-      <div class="skill-group">
-        <div class="skill-group-key">product_and_delivery:</div>
-        <div class="tag-row">
-          <span class="tag">forward deployment</span><span class="tag">customer discovery</span><span class="tag">solution engineering</span><span class="tag">stakeholder management</span><span class="tag">release planning</span><span class="tag">UAT coordination</span><span class="tag">production rollout</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-key">ai_engineering:</div>
-        <div class="tag-row">
-          <span class="tag">Azure AI models</span><span class="tag">AI SDK</span><span class="tag">LLM tool calling</span><span class="tag">prompt orchestration</span><span class="tag">context grounding</span><span class="tag">structured outputs</span><span class="tag">JSON Schema</span><span class="tag">Zod</span><span class="tag">YAML generation</span><span class="tag">response repair</span><span class="tag">sensitive-field redaction</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-key">engineering:</div>
-        <div class="tag-row">
-          <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Vue.js</span><span class="tag">Angular</span><span class="tag">Vite</span><span class="tag">Pinia</span><span class="tag">Vuex</span><span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">tRPC</span><span class="tag">Axios</span><span class="tag">REST APIs</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL</span><span class="tag">Redshift</span><span class="tag">Redis</span><span class="tag">Jest</span><span class="tag">Cypress</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-key">platforms:</div>
-        <div class="tag-row">
-          <span class="tag">AI-assisted config</span><span class="tag">banking ops consoles</span><span class="tag">Git-backed config</span><span class="tag">micro-frontends</span><span class="tag">design systems</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">Prometheus</span><span class="tag">OpenTelemetry</span><span class="tag">Winston</span><span class="tag">RBAC</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="file reveal in" id="experience">
-    <div class="file-head">
-      <span class="file-name">03 · experience.log</span>
-      <h2 class="file-title">Professional experience</h2>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-role">Lead Software Engineer</span>
-        <span class="job-dates">Sep 2019 — Present</span>
-      </div>
-      <div class="job-company">Zeta</div>
-
-      <div class="subblock">
-        <div class="subblock-title">recent AI project <span class="tag-mini">ProdAigy</span></div>
-        <ul class="diff">
-          <li>Built and deployed <strong>ProdAigy</strong>, an AI copilot that helps bank portfolio managers create, update, and validate financial product bundles across card, payment, account, wallet, notification, and policy configurations.</li>
-          <li>Designed LLM workflows for product-template recommendation, guided configuration, document-assisted form filling, YAML generation, and change-proposal journeys.</li>
-          <li>Added AI guardrails with JSON Schema, Zod, catalog reconciliation, editable-path validation, response parsing/repair, sensitive-field redaction, and scoped transient document context.</li>
-          <li>Built human-in-the-loop change flows where AI proposes minimal YAML patches, shows confirmation cards and diffs, and applies updates only after explicit user approval.</li>
-          <li>Productionized the AI workflow with Redis-backed session memory, auth-aware service calls, Prometheus metrics, structured logging, OpenTelemetry tracing, Docker builds, and Helm/Kubernetes deployment configs.</li>
-        </ul>
-      </div>
-
-      <div class="subblock">
-        <div class="subblock-title">product configuration &amp; operations platforms</div>
-        <ul class="diff">
-          <li>Owned end-to-end delivery of product-configuration and bundle-operations tools used by operations teams to configure, monitor, issue, and troubleshoot banking product bundles.</li>
-          <li>Built the initial product-configuration platform POC and first release, including spreadsheet-based data-entry flows, bank-client UAT deployment, product bundle backfill, and team onboarding.</li>
-          <li>Designed operations-workbench consoles for product bundles, issuance requests, status details, dashboards, application tracking, and application details, reducing dependence on backend/API lookups.</li>
-          <li>Delivered card and bundle issuance flows including primary card, add-on card, reissue/replacement-style actions, PIN setup, and account activation across pre-production and production environments.</li>
-          <li>Shipped dynamic form builder, reusable API-backed search, and analytics capabilities using schema-based forms, interactive charts, Redshift APIs, session-based authorization, and TypeORM queries.</li>
-          <li>Improved governance and release reliability with RBAC, dual-approval overrides, API-call validation, asset-security fixes, workflow automation, deployment checks, Git-backed environment promotion, and bug-bash release readiness.</li>
-          <li>Onboarded frontend engineers through architecture walkthroughs, internal tooling guidance, deployment-process support, and codebase orientation.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-role">Frontend Developer</span>
-        <span class="job-dates">Aug 2016 — Aug 2019</span>
-      </div>
-      <div class="job-company">iOSys</div>
-      <ul class="diff">
-        <li>Implemented pixel-perfect, responsive websites and web interfaces using HTML, CSS, JavaScript, and Angular.</li>
-        <li>Converted UI designs into production-ready pages with strong attention to layout accuracy, cross-browser behavior, responsive structure, and maintainable front-end code.</li>
-        <li>Collaborated with design and engineering stakeholders to deliver reliable customer-facing web experiences and support iterative improvements across web projects.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- AWARDS -->
-  <section class="file reveal in" id="awards">
-    <div class="file-head">
-      <span class="file-name">04 · awards.json</span>
-      <h2 class="file-title">Hackathons &amp; awards</h2>
-    </div>
-    <div class="award-grid">
-      <div class="award-card"><span class="award-year">2025</span><div class="award-text"><div class="t">Second-Place Winner</div><div class="o">Pixel Hackathon, Zeta</div></div></div>
-      <div class="award-card"><span class="award-year">2024</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
-      <div class="award-card"><span class="award-year">2022</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
-      <div class="award-card"><span class="award-year">2020</span><div class="award-text"><div class="t">Outstanding Performance</div><div class="o">Recognition award</div></div></div>
-      <div class="award-card"><span class="award-year">2020</span><div class="award-text"><div class="t">Winner — Kreate Hackathon</div><div class="o">MoneyOnClick, org. by Kalaari Capital</div></div></div>
-      <div class="award-card"><span class="award-year">2019</span><div class="award-text"><div class="t">Best API Usage Award</div><div class="o">WMN Hackathon, HERE Technologies</div></div></div>
-      <div class="award-card"><span class="award-year">2018</span><div class="award-text"><div class="t">Second Place Winner</div><div class="o">Hedera18 Hackathon India</div></div></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="file reveal in">
-    <div class="file-head">
-      <span class="file-name">05 · education.md</span>
-      <h2 class="file-title">Education</h2>
-    </div>
-    <div class="summary-block" style="padding:8px 28px;">
-      <div class="edu-row">
-        <span class="edu-name">Bachelor of Technology — NRI Institute of Technology</span>
-        <span class="edu-meta">2012 – 2016 · 70%</span>
-      </div>
-      <div class="edu-row">
-        <span class="edu-name">Intermediate — Sri Chaitanya Junior College</span>
-        <span class="edu-meta">2010 – 2012 · 90%</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="file reveal in" id="contact">
-    <div class="file-head">
-      <span class="file-name">06 · contact.sh</span>
-      <h2 class="file-title">Get in touch</h2>
-    </div>
-    <div class="contact-shell">
-      <div class="contact-head">
-        <span class="win r"></span><span class="win y"></span><span class="win g"></span>
-        <span class="yaml-filename" style="margin-left:6px;">bash — contact.sh</span>
-      </div>
-      <div class="contact-body">
-        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">call</span><a class="cmd-arg" href="tel:7348870730">73488 70730</a></div>
-        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">mail --to</span><a class="cmd-arg" href="mailto:renukapoluruv@gmail.com">renukapoluruv@gmail.com</a></div>
-        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">open</span><span class="cmd-arg">linkedin.com/in/renukapoluru</span></div>
-        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">open</span><span class="cmd-arg">github.com/renukapoluru</span></div>
-        <div class="cmd-line"><span class="cmd-prompt">$</span><span class="cmd-flag">location</span><span class="cmd-arg">Bangalore, India</span></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>renuka poluru · built from profile.yaml · status: approved</p>
-  </footer>
-
-</div>
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-</script>
-
-
-
-</body></html>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner wrap">
+<a class="brand" href="#home" aria-label="Renuka Poluru, home"><span class="brand-mark" aria-hidden="true">r<span>p</span>.</span><span>Renuka Poluru<span class="brand-caption">A FRONTEND FAIRYTALE</span></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
+<nav id="main-nav" aria-label="Main navigation"><a href="#story">The story</a><a href="#work">Selected work</a><a href="#craft">The craft</a><a href="#milestones">Little milestones</a><a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main">
+<section class="hero wrap" id="home" aria-labelledby="hero-title">
+<div class="hero-copy"><p class="eyebrow"><span class="little-star" aria-hidden="true">✳</span> ENGINEER BY TRADE. BUILDER AT HEART.</p><h1 id="hero-title">A little wonder. <br>A lot of <em>frontend.</em></h1><p class="hero-intro">Hello, I’m <strong>Renuka.</strong> I turn complex problems into thoughtful interfaces, scalable platforms, and a little everyday magic.</p><p class="role">Lead Software Engineer <span aria-hidden="true">·</span> Frontend Platforms &amp; AI Products</p><div class="hero-actions"><a class="button button-dark" href="#work">Explore my work <span aria-hidden="true">↘</span></a><a class="text-link" href="assets/Renuka_Poluru_Resume.pdf" download="Renuka_Poluru_Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></div><div class="hero-footnote"><span class="location-dot" aria-hidden="true"></span> Bangalore, India <span class="tiny-divider">/</span> Building with intention since 2016</div></div>
+<div class="hero-art" aria-label="An interactive illustration of frontend craft"><div class="art-arch" aria-hidden="true"><span class="moon"></span><span class="arch-star one">✦</span><span class="arch-star two">✧</span><span class="arch-star three">✦</span><span class="orbit"></span></div><div class="floating-note note-top">a little imagination <span aria-hidden="true">✧</span></div><div class="storybook-window"><div class="window-bar"><span class="window-dots" aria-hidden="true">● ● ●</span><span>frontend.story</span><span aria-hidden="true">✧</span></div><div class="window-content"><span class="mini-eyebrow">ONCE UPON A COMPONENT</span><div class="preview-symbol" aria-hidden="true">✳</div><p class="preview-title">Beautiful outside. <br><em>Thoughtful inside.</em></p><div class="mini-code"><span>const</span> experience = { <br>&nbsp; craft: <b>'intentional'</b>, <br>&nbsp; possibilities: <b>'endless'</b> <br>};</div><button class="magic-button" type="button" aria-pressed="false" hidden>Add a little magic <span aria-hidden="true">✧</span></button><p class="magic-status" aria-live="polite"></p></div></div><div class="floating-note note-bottom"><span class="note-check" aria-hidden="true">✓</span> Made of curiosity &amp; components</div><span class="art-caption">good engineering is its own kind of magic.</span></div>
+</section>
+<div class="proof-strip"><div class="wrap proof-grid"><div><strong>10+</strong><span>years of engineering</span></div><div><strong>20+</strong><span>financial institutions served</span></div><div><strong>100+</strong><span>financial products managed</span></div><div><strong>10</strong><span>engineers led</span></div></div></div>
+<section class="section wrap story-section" id="story" aria-labelledby="story-title"><div class="section-label"><span>01 / THE STORY</span><span aria-hidden="true">✧</span></div><div class="story-grid"><h2 id="story-title">Behind every seamless <br>experience, a thousand <br><em>thoughtful decisions.</em></h2><div class="story-copy"><p>I’m a hands-on technical leader who cares as much about the architecture behind an interface as the experience in front of it.</p><p>Over 10+ years, I’ve grown from building customer portals to defining frontend platforms for enterprise banking. At Zeta, I lead a team of 10 engineers across frontend, full-stack delivery, and AI-assisted products.</p><p>My work connects reusable components, secure workflows, and reliable releases—making complex financial products easier for people to configure and manage.</p><a class="text-link" href="#journey">Follow the chapters <span aria-hidden="true">↓</span></a></div></div></section>
+<section class="work-section section" id="work" aria-labelledby="work-title"><div class="wrap"><div class="section-label"><span>02 / SELECTED WORK</span><span>COMPLEXITY, REIMAGINED</span></div><div class="section-heading"><h2 id="work-title">Some things I’ve <br><em>brought to life.</em></h2><p>Real platforms. Thoughtful systems. <br>A few stories from the work.</p></div>
+<article class="project project-lavender"><div class="project-art config-art" aria-hidden="true"><div class="diagram-label">THE BLUEPRINT BECOMES THE PRODUCT</div><div class="blueprint"><div class="blueprint-top"><span>Product blueprint</span><span>✧</span></div><div class="blueprint-field"><span>Product family</span><b>Cards &amp; payments</b></div><div class="blueprint-field"><span>Configuration</span><b>Reusable by design</b></div><div class="blueprint-progress"><i></i><i></i><i></i><i></i></div></div><div class="connector-line"></div><div class="diagram-chips"><span>Template</span><span>Validate</span><span>Create</span></div><span class="art-spark">✳</span></div><div class="project-copy"><p class="eyebrow">01 / FRONTEND PLATFORM ARCHITECTURE</p><h3>One blueprint. <br>A world of possibilities.</h3><p>Product Center &amp; Bundles Workbench turned multi-team configuration requests into reusable, self-service workflows for financial institutions.</p><div class="project-result"><strong>20+ institutions</strong><span>100+ actively managed financial products</span></div><div class="tags"><span>Vue 3</span><span>Module Federation</span><span>Schema Builder</span></div><details><summary>Read the engineering story <span aria-hidden="true">＋</span></summary><div class="detail-content"><p>I defined the blueprint-driven architecture for templates, input flows, validation, and bundle creation. Delivery included HDFC UAT, role-based authorization, issuance tracking, Bundle Details, and operations workflows.</p><p>Vue 3 and Module Federation supported modular frontends, with Nginx, CDN and edge caching, multi-region deployments, automated regression suites, and controls for bi-monthly production releases.</p></div></details></div></article>
+<article class="project project-peach"><div class="project-art ai-art" aria-hidden="true"><div class="diagram-label">A LITTLE INTELLIGENCE. A HUMAN IN CONTROL.</div><div class="chat-bubble">Let’s configure something wonderful. <span>✧</span></div><div class="approval-card"><span class="mini-eyebrow">PROPOSED CONFIGURATION</span><div class="approval-row"><span>Schema &amp; rule validation</span><b>✓</b></div><div class="approval-row"><span>Authorization &amp; compliance</span><b>✓</b></div><div class="approval-footer"><span>Ready for human review</span><span>↗</span></div></div><span class="art-spark">✦</span></div><div class="project-copy"><p class="eyebrow">02 / AI PRODUCT ENGINEERING</p><h3>Intelligent by design. <br>Human at the heart.</h3><p>An AI-assisted configuration product to create, update, and validate banking bundles across cards, payments, accounts, wallets, notifications, and policies.</p><div class="project-result"><strong>3–4 weeks → under 7 days</strong><span>Configuration turnaround, with 98% correctness</span></div><div class="tags"><span>AI guardrails</span><span>Human approval</span><span>Full-stack delivery</span></div><details><summary>Read the engineering story <span aria-hidden="true">＋</span></summary><div class="detail-content"><p>I architected and deployed the product with request clarification, approved-template constraints, schema and rule validation, explicit user approval, role-based OAuth authorization, and compliance checks before enterprise changes.</p><p>As a hands-on lead, I guided 10 direct reports through architecture and code reviews, hiring, mentoring, and performance management, coordinating delivery with product, security, and business teams.</p></div></details></div></article>
+<article class="project project-sage"><div class="project-art workflow-art" aria-hidden="true"><div class="diagram-label">GOOD SYSTEMS MAKE ROOM TO BUILD</div><div class="workflow-step"><span>01</span><b>Modernize the code</b><i>✓</i></div><div class="workflow-step"><span>02</span><b>Generate the pull request</b><i>✓</i></div><div class="workflow-step"><span>03</span><b>Validate with tests</b><i>✓</i></div><div class="workflow-finish">More momentum. Less repetition. <span>↗</span></div></div><div class="project-copy"><p class="eyebrow">03 / ENGINEERING MULTIPLIER</p><h3>Better tools. <br>Bigger possibilities.</h3><p>A reusable JDK 21 modernization workflow that brought automation to code changes, pull-request generation, and test validation across teams.</p><div class="project-result"><strong>3–4 weeks → 4 days</strong><span>Modernization turnaround across 30+ services</span></div><div class="tags"><span>JDK 21</span><span>Developer experience</span><span>12+ teams</span></div><details><summary>Read the engineering story <span aria-hidden="true">＋</span></summary><div class="detail-content"><p>I created a reusable modernization workflow adopted by 12+ teams across 30+ services. Automating recurring code changes, pull-request generation, and test validation reduced modernization turnaround from 3–4 weeks to 4 days.</p></div></details></div></article>
+<p class="illustration-note">Illustrations tell the story of the work; they are not product screenshots.</p></div></section>
+<section class="section wrap" id="craft" aria-labelledby="craft-title"><div class="section-label"><span>03 / THE CRAFT</span><span aria-hidden="true">✳</span></div><div class="section-heading"><h2 id="craft-title">The tools behind <br><em>the wonder.</em></h2><p>A frontend foundation. <br>The range to build beyond it.</p></div><div class="craft-grid">
+<article class="craft-card"><span class="craft-icon" aria-hidden="true">{ }</span><h3>Interfaces with intention</h3><p>Responsive, accessible experiences and reusable components that make the details count.</p><div class="tags"><span>TypeScript</span><span>JavaScript</span><span>Vue 3</span><span>React 18+</span><span>Next.js 14</span><span>Angular 17 / 18</span><span>HTML5</span><span>CSS3 / SCSS / LESS</span><span>WCAG / ARIA</span></div></article>
+<article class="craft-card"><span class="craft-icon" aria-hidden="true">⌘</span><h3>Systems that grow</h3><p>Modular architecture and a shared design language, from individual components to entire platforms.</p><div class="tags"><span>Micro frontends</span><span>Module Federation</span><span>Storybook</span><span>Tailwind CSS</span><span>MUI / Bootstrap</span><span>Vite / Webpack</span><span>Redux Toolkit / MobX</span><span>NgRx / RxJS</span><span>WebSocket / SSE</span></div></article>
+<article class="craft-card"><span class="craft-icon" aria-hidden="true">✧</span><h3>Intelligence, thoughtfully</h3><p>AI-assisted products with grounded workflows, clear guardrails, and people in control.</p><div class="tags"><span>OpenAI APIs</span><span>LangChain / LangGraph</span><span>RAG</span><span>Agentic AI</span><span>Tool calling</span><span>Vector databases</span><span>AI evaluation</span><span>AI security &amp; governance</span><span>Cursor / GitHub Copilot</span></div></article>
+<article class="craft-card"><span class="craft-icon" aria-hidden="true">↗</span><h3>Built to reach production</h3><p>Full-stack delivery, observability, and dependable releases across regions.</p><div class="tags"><span>Node.js / NestJS</span><span>Java / Spring Boot</span><span>REST / tRPC / TypeORM</span><span>PostgreSQL / Redis</span><span>Firestore / Redshift</span><span>Kafka / RBAC</span><span>Docker / Kubernetes / Helm</span><span>Jenkins</span><span>Prometheus / OpenTelemetry</span></div></article>
+</div></section>
+<section class="journey-section section" id="journey" aria-labelledby="journey-title"><div class="wrap journey-grid"><div class="journey-heading"><p class="eyebrow">04 / THE CHAPTERS SO FAR</p><h2 id="journey-title">A story of <br><em>building &amp; <br>becoming.</em></h2><p>Growing in scope. <br>Staying close to the craft.</p><div class="education"><span class="mini-eyebrow">WHERE IT BEGAN</span><h3>Bachelor of Technology</h3><p>NRI Institute of Technology <br>2012 – 2016</p></div></div><div class="timeline">
+<article class="timeline-item"><span class="timeline-point" aria-hidden="true"></span><div class="job-meta"><span>ZETA</span><span>Aug 2025 – Present</span></div><h3>Lead Software Engineer</h3><p>Full-stack platform architecture and AI products. Leading 10 engineers, delivering secure AI-assisted configuration, and scaling modernization across 12+ teams.</p><span class="current-tag">THE CURRENT CHAPTER</span></article>
+<article class="timeline-item"><span class="timeline-point" aria-hidden="true"></span><div class="job-meta"><span>ZETA</span><span>Sep 2022 – Jul 2025</span></div><h3>Senior Software Engineer</h3><p>Defined the blueprint-driven configuration architecture adopted by 20+ financial institutions. Built Product Center and Bundles Workbench with modular frontends and multi-region delivery.</p></article>
+<article class="timeline-item"><span class="timeline-point" aria-hidden="true"></span><div class="job-meta"><span>ZETA</span><span>Jul 2020 – Jun 2022</span></div><h3>Software Engineer II</h3><p>Built reusable configuration and operations workflows, improved deployment readiness, resolved VBO Center asset security, and onboarded frontend engineers.</p></article>
+<article class="timeline-item"><span class="timeline-point" aria-hidden="true"></span><div class="job-meta"><span>ZETA</span><span>Sep 2019 – Jun 2020</span></div><h3>Software Engineer I</h3><p>Built enterprise financial-product configuration experiences and the engineering foundation for later platform ownership.</p></article>
+<article class="timeline-item"><span class="timeline-point" aria-hidden="true"></span><div class="job-meta"><span>IOSYS</span><span>Aug 2016 – Aug 2019</span></div><h3>Software Engineer</h3><p>Owned end-to-end delivery for 50+ customer portals, CMS sites, and e-commerce flows. Built reusable Angular components with a focus on performance, accessibility, and cross-browser quality.</p></article>
+</div></div></section>
+<section class="section wrap awards-section" id="milestones" aria-labelledby="awards-title"><div class="section-label"><span>05 / LITTLE MILESTONES</span><span aria-hidden="true">✦</span></div><div class="section-heading"><h2 id="awards-title">A few moments <br><em>that sparkled.</em></h2></div><div class="awards-grid">
+<article class="award"><span class="award-symbol" aria-hidden="true">✳</span><div><span class="mini-eyebrow">2025 · ZETA</span><h3>Second place, Pixel Hackathon</h3></div></article>
+<article class="award"><span class="award-symbol" aria-hidden="true">✧</span><div><span class="mini-eyebrow">2024 · 2022 · 2020</span><h3>Outstanding Performance Recognition</h3></div></article>
+<article class="award"><span class="award-symbol" aria-hidden="true">✦</span><div><span class="mini-eyebrow">2020 · MONEYONCLICK / KALAARI CAPITAL</span><h3>Winner, Kreate Hackathon</h3></div></article>
+<article class="award"><span class="award-symbol" aria-hidden="true">✴</span><div><span class="mini-eyebrow">2019 · HERE TECHNOLOGIES</span><h3>Best API Usage, WMN Hackathon</h3></div></article>
+<article class="award"><span class="award-symbol" aria-hidden="true">✶</span><div><span class="mini-eyebrow">2018 · HEDERA18 INDIA</span><h3>Second place, Hedera18 Hackathon</h3></div></article>
+</div></section>
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-inner"><span class="contact-star" aria-hidden="true">✳</span><p class="eyebrow">THE NEXT CHAPTER</p><h2 id="contact-title">Let’s build something <br><em>worth believing in.</em></h2><p>Thoughtful interfaces. Ambitious platforms. Interesting problems. <br>I’d love to hear what you’re working on.</p><a class="button button-dark" href="mailto:renukapoluruv@gmail.com">Say hello <span aria-hidden="true">↗</span></a><a class="contact-email" href="mailto:renukapoluruv@gmail.com">renukapoluruv@gmail.com</a><div class="contact-links"><a href="https://www.linkedin.com/in/renuka-poluru-710262b7/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/renukapoluru" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="tel:+917348870730">+91 73488 70730</a><a href="assets/Renuka_Poluru_Resume.pdf" download="Renuka_Poluru_Resume.pdf">Résumé ↓</a></div></div></section>
+</main>
+<footer class="site-footer wrap"><a class="footer-brand" href="#home">Renuka Poluru <span aria-hidden="true">✧</span></a><p>A little wonder. A lot of care.</p><a href="#home">Back to the beginning ↑</a></footer>
+</body>
+</html>
